@@ -1,0 +1,487 @@
+@font-face {
+    font-family: "SFBlack";
+    src: url("fonts/SF-Pro-Display-Black.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SFBold";
+    src: url("fonts/SF-Pro-Display-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SFThin";
+    src: url("fonts/SF-Pro-Display-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SFRegular";
+    src: url("fonts/SF-Pro-Display-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SFMedium";
+    src: url("fonts/SF-Pro-Display-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "SFLight";
+    src: url("fonts/SF-Pro-Display-Light.woff") format("woff");
+}
+
+:root {
+    --lmutedblue: #CFEBFF;
+    --blue: #48AFFF;
+    --lmutedgrn: #94FFCD;
+    --vlgray: #FCFCFC;
+    --lgray: #f2f2f2;
+    --dgray: #707070;
+    --vdgray: #515151;
+    --dmutedblue: #356081;
+    --navunderlinewidth: 35%; 
+    --h1: 2em;
+    --h2: 4.5em;
+    --h3: 1.5em;
+    --self: 50vh;
+    --homepadleft: 10vh;
+    --homepadright: 2vh;
+    --homepadbot: 0vh;
+    --scrolldeg: 90deg;
+    /* --homepadtop: ;*/
+}
+
+html {
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+html * {
+    cursor: none !important;
+}
+
+*,
+*::after,
+*::before {
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-user-select: -moz-none;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.cursor1 {
+    pointer-events: none;
+    position: fixed;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--vdgray);
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: .15s;
+    z-index: 3;
+}
+
+.cursor2 {
+    pointer-events: none;
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background-color: var(--vdgray);
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    transition: .1s;
+    z-index: 3;
+}
+
+.content~.cursor1 {
+    transform: translate(-50%, -50%) scale(1.5s);
+    background-color: var(--vdgray);
+    opacity: .5;
+}
+
+.content:hover~.cursor2 {
+    opacity: 0;
+}
+
+.navbar {
+    padding: 0%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 100%;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.navbar li{
+    position: relative;
+}
+
+.navbar li:after{
+    border-radius: 3px;
+    content: "";
+    position: absolute;
+    margin-left: 5.5px;
+    background-color: var(--blue);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: 8px;
+    transition: 0.2s;
+}
+
+.navbar li:hover span{
+    color: var(--blue);
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    -ms-transition: color 0.2s linear;
+    transition: color 0.2s linear;    
+}
+
+.navbar li:hover:after{
+    width: var(--navunderlinewidth);
+}
+
+.navbar-nav > .active > a > span{ 
+    color: var(--blue) ; 
+    font-family: "SFMedium";
+}
+
+.navbar-nav > .active:after{    
+    animation: animactnav 0.6s;
+    width: var(--navunderlinewidth);
+} 
+
+@keyframes animactnav {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: var(--navunderlinewidth);
+    }
+}
+
+.mtnavdiv{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.navoptions {
+    color: var(--dgray);
+    font-size: 1.2em;
+    font-family: "SFLight";
+    margin-right: 2.5vh;
+}
+
+#collapsableNav{
+    width: 100%;
+    padding: 10px;
+}
+
+.navdiv{
+    border-left: 1px solid rgb(239, 239, 239);
+    border-bottom: 1px solid rgb(239, 239, 239);
+    padding-left: 4.5vh;
+    background: rgba( 225, 225, 225, 0);
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+
+.contact {
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 160px;
+    height: 20px;
+    font-size: 1.2em;
+    border-style: none;
+    background-color: var(--blue);
+    color: white;
+    font-family: "SFMedium";
+    border-radius: 5px;
+    outline: none;
+}
+
+button:focus, button:focus, [type="submit"]:focus {
+    outline: none;
+ }
+
+.row {
+    position: absolute;
+    top: 0;
+    display: flex;
+    height: 100vh;
+}
+
+.hidsoc {
+    background-color: var(--vlgray);
+    border-right: 1px solid rgb(239, 239, 239);
+}
+
+.lh {
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.socials {
+    background-color: var(--lgray);
+    margin: 0 auto;
+    width: 4em;
+    height: 4em;
+    border: none;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    margin: 0.4em;
+    position: relative;
+    -webkit-transition: background-color 0.15s ease-in;
+    -moz-transition: background-color 0.15s ease-in;
+    -o-transition: background-color 0.15s ease-in;
+    transition: background-color 0.15s ease-in;
+}
+
+.socials svg {
+    width: 2em;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.socials svg path {
+    fill: var(--dgray);
+}
+
+.socials:hover {
+    background-color: var(--lmutedblue);
+    -webkit-transition: background-color 0.15s ease-in;
+    -moz-transition: background-color 0.15s ease-in;
+    -o-transition: background-color 0.15s ease-in;
+    transition: background-color 0.15s ease-in;
+}
+
+.socials:hover svg path {
+    fill: var(--dmutedblue);
+    -webkit-transition: fill 0.15s ease-in;
+    -moz-transition: fill 0.15s ease-in;
+    -o-transition: fill 0.15s ease-in;
+    transition: fill 0.15s ease-in;
+}
+
+.socials:not(:hover) svg path {
+    fill: var(--dgray);
+    -webkit-transition: fill 0.15s ease-out;
+    -moz-transition: fill 0.15s ease-out;
+    -o-transition: fill 0.15s ease-out;
+    transition: fill 0.15s ease-out;
+}
+
+.homemiddle {
+    margin-top: 11%;    
+    padding-left: var(--homepadleft);
+    padding-right: var(--homepadright);
+}
+
+.hi {
+    font-family: "SFThin";
+    font-size: var(--h1);
+    margin-bottom: -0.5vh;
+}
+
+.myname {
+    font-family: "SFBold";
+    font-size: var(--h2);
+    margin-left: 5vh;
+    background: linear-gradient(to bottom, transparent 30%, var(--lmutedgrn) 0%);
+}
+
+.title {
+    font-family: "SFLight";
+    font-size: var(--h3);
+    padding-top: 1vh;
+}
+
+.bio {
+    font-family: "SFMedium";
+    font-size: var(--h3);
+    padding-top: 1.5vh;
+}
+
+.knowmore {
+    color: var(--blue);
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+    background-color: white;
+    padding: 14px;
+    width: 220px;
+    font-family: "SFMedium";
+    font-size: var(--h3);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    margin-top: 4vh;
+    cursor: none;
+}
+
+.knowmore span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+    cursor: none;
+}
+
+.knowmore span:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: large;
+    content: '\f061';
+    padding: 4px;
+    position: absolute;
+    opacity: 0;
+    right: -20px;
+    transition: 0.3s;
+}
+
+.knowmore:hover span {
+    padding-right: 26px;
+}
+
+.knowmore:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.homerighthalf {
+    margin-top: 10%;
+    display:block;
+}
+
+.scrollcont {
+    position: relative;
+    overflow: hidden;
+}
+  
+.scrolling-text {
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+  
+.scrolling-text .scrolling-text-content {
+    color: #F6F6F6;
+    font-family: "SFBlack";
+    font-weight: bolder;
+    font-size: 6vw;
+    white-space: nowrap;
+    transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+}
+  
+.sidetext{
+    transform: rotate(var(--scrolldeg));
+}
+
+.self {
+    height: var(--self);
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+@media (min-width: 992px) {
+    .navbar li {
+        margin: 0.6em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --self: 38vh;
+        --scrolldeg: 0deg;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    :root {
+        --navunderlinewidth: 0%;
+        --h1: 1.7em;
+        --h2: 3.5em;
+        --h3: 1.3em;
+        --scrolldeg: 0deg;
+
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    :root {
+        --navunderlinewidth: 0%;
+        --self: 34vh;
+        --homepadleft: 1vh;
+        --homepadright: 1vh;
+        --scrolldeg: 0deg;
+
+    }
+}
+
+@media only screen and (max-width: 600px){
+    :root {
+        --navunderlinewidth: 0%;
+        --homepadleft: 2vh;
+        --homepadright: 2vh;
+        
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    :root {
+        --navunderlinewidth: 0%;
+        --homepadleft: 3vh;
+        --homepadright: 3vh;
+        --scrolldeg: 0deg;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    :root {
+        --homepadleft: 4vh;
+        --homepadright: 4vh;
+        --scrolldeg: 0deg;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    :root {
+        --scrolldeg: 0deg;
+    }
+}
