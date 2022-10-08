@@ -29,24 +29,41 @@
 }
 
 :root {
+    --dthemefcol: black;
+    --cursorcol: #515151;
+    --socbtnhovercol: #CFEBFF;
+    --socbtniccol: #B3B7E1;
+    --hideablebgcol: #FCFCFC;
+    --socbtnbgcol: #FCFCFC;
+    --contbtntcol: white;
+    --titlecol: #000;
+    --namecol: #000;
+    --scrollercol: #F8F8F8;
+    --bodycol: white;
     --lmutedblue: #CFEBFF;
-    --blue: #48AFFF;
+    --dblue: rgba(0, 128, 207, 0.805);
+    --navleftborder: rgb(239, 239, 239);
+    --navbotborder: rgb(239, 239, 239);
+    --socborder: rgb(215, 215, 215);
+    --sochoverborder: rgb(151, 181, 204);
+    --linecol: rgb(105, 105, 105);
     --lmutedgrn: #94FFCD;
-    --vlgray: #FCFCFC;
-    --lgray: #f2f2f2;
     --dgray: #707070;
-    --vdgray: #515151;
     --dmutedblue: #356081;
-    --navunderlinewidth: 35%; 
+    --homemiddlemargintop: 11%;
+    --borderthickness: 1px;
+    --navunderlinewidth: 35%;
     --h1: 2em;
     --h2: 4.5em;
     --h3: 1.5em;
-    --self: 50vh;
+    --selfh: 25em;
     --homepadleft: 10vh;
     --homepadright: 2vh;
     --homepadbot: 0vh;
+    --hrhhgt: 100%;
     --scrolldeg: 90deg;
-    /* --homepadtop: ;*/
+    --stexthgt: 120px;
+    --contactmb: 0px;
 }
 
 html {
@@ -55,9 +72,9 @@ html {
     overflow-x: hidden;
 }
 
-html * {
+/*html * {
     cursor: none !important;
-}
+} */
 
 *,
 *::after,
@@ -65,8 +82,8 @@ html * {
     -webkit-user-drag: none;
     -webkit-app-region: no-drag;
     -webkit-touch-callout: none;
-    -webkit-user-select: none; 
-     -khtml-user-select: none; 
+    -webkit-user-select: none;
+    -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
@@ -82,7 +99,8 @@ body {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
+    transition: ease-in 0.2s;
+    background: var(--bodycol);
 }
 
 .cursor1 {
@@ -90,7 +108,7 @@ body {
     position: fixed;
     width: 28px;
     height: 28px;
-    border: 1px solid var(--vdgray);
+    border: 1px solid var(--cursorcol);
     border-radius: 50%;
     left: 0;
     top: 0;
@@ -104,7 +122,7 @@ body {
     position: fixed;
     width: 6px;
     height: 6px;
-    background-color: var(--vdgray);
+    background-color: var(--cursorcol);
     border-radius: 50%;
     left: 0;
     top: 0;
@@ -115,12 +133,44 @@ body {
 
 .content~.cursor1 {
     transform: translate(-50%, -50%) scale(1.5s);
-    background-color: var(--vdgray);
+    background-color: var(--cursorcol);
     opacity: .5;
 }
 
 .content:hover~.cursor2 {
     opacity: 0;
+}
+
+.logo1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2em;
+    margin: auto;
+    outline: none;
+    border: none;
+}
+
+.logo2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 2em;
+    outline: none;
+    border: none;
+}
+
+.nav-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: auto;
+    height: 100%;
 }
 
 .navbar {
@@ -129,19 +179,20 @@ body {
     flex-wrap: wrap;
     width: 100%;
     white-space: nowrap;
+    height: 6em;
     z-index: 1;
 }
 
-.navbar li{
+.navbar li {
     position: relative;
 }
 
-.navbar li:after{
+.navbar li:after {
     border-radius: 3px;
     content: "";
     position: absolute;
     margin-left: 5.5px;
-    background-color: var(--blue);
+    background-color: var(--dblue);
     height: 3px;
     width: 0;
     left: 0;
@@ -149,41 +200,43 @@ body {
     transition: 0.2s;
 }
 
-.navbar li:hover span{
-    color: var(--blue);
+.navbar li:hover span {
+    color: var(--dblue);
     -webkit-transition: color 0.2s linear;
     -moz-transition: color 0.2s linear;
     -o-transition: color 0.2s linear;
     -ms-transition: color 0.2s linear;
-    transition: color 0.2s linear;    
+    transition: color 0.2s linear;
 }
 
-.navbar li:hover:after{
+.navbar li:hover:after {
     width: var(--navunderlinewidth);
 }
 
-.navbar-nav > .active > a > span{ 
-    color: var(--blue) ; 
+.navbar-nav>.active>a>span {
+    color: var(--dblue);
     font-family: "SFMedium";
 }
 
-.navbar-nav > .active:after{    
+.navbar-nav>.active:after {
     animation: animactnav 0.6s;
     width: var(--navunderlinewidth);
-} 
+}
 
 @keyframes animactnav {
     0% {
-      width: 0;
+        width: 0;
     }
+
     100% {
-      width: var(--navunderlinewidth);
+        width: var(--navunderlinewidth);
     }
 }
 
-.mtnavdiv{
+.emptynavdiv {
     padding: 0;
-    margin: 0;
+    margin: auto;
+    width: 100%;
     height: 100%;
 }
 
@@ -194,37 +247,95 @@ body {
     margin-right: 2.5vh;
 }
 
-#collapsableNav{
+#collapsableNav {
     width: 100%;
     padding: 10px;
 }
 
-.navdiv{
-    border-left: 1px solid rgb(239, 239, 239);
-    border-bottom: 1px solid rgb(239, 239, 239);
+.navdiv {
+    margin-top: -1px;
+    border-left: var(--borderthickness) solid var(--navleftborder);
+    border-bottom: 1px solid var(--navbotborder);
     padding-left: 4.5vh;
-    background: rgba( 225, 225, 225, 0);
-    backdrop-filter: blur( 8px );
-    -webkit-backdrop-filter: blur( 4px );
+    background: rgba(225, 225, 225, 0);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .contact {
     margin-top: 10px;
     margin-right: 10px;
+    margin-bottom: var(--contactmb);
     width: 160px;
     height: 20px;
     font-size: 1.2em;
     border-style: none;
-    background-color: var(--blue);
-    color: white;
+    background-color: var(--dblue);
+    color: var(--contbtntcol);
     font-family: "SFMedium";
     border-radius: 5px;
     outline: none;
 }
 
-button:focus, button:focus, [type="submit"]:focus {
+button:focus,
+button:focus,
+[type="submit"]:focus {
     outline: none;
- }
+}
+
+body.dark {
+    transition: ease-in 0.2s;
+    background: var(--bodycol);
+
+}
+
+#toggle {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 100%;
+    display: block;
+    width: 70px;
+    height: 35px;
+    border-radius: 35px;
+    transition: 0.5s;
+    background: #fff;
+    box-shadow: inset 0 2px 30px rgba(0, 0, 0, 0.1),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 -2px 2px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#toggle.dark {
+    background: #28466b;
+    box-shadow: inset 0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 4px 4px rgba(0, 0, 0, 0.1),
+        inset 0 -2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#toggle .indicator {
+    position: absolute;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.5s;
+    left: 0px;
+    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1),
+        inset 0 2px 2px rgba(255, 255, 255, 1),
+        inset 0 -2px 2px rgba(255, 255, 255, 1);
+}
+
+#toggle.dark .indicator {
+    left: 35px;
+    background: linear-gradient(to bottom, #28466b, #142C51);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(0, 0, 0, 0.2),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
 
 .row {
     position: absolute;
@@ -234,8 +345,8 @@ button:focus, button:focus, [type="submit"]:focus {
 }
 
 .hidsoc {
-    background-color: var(--vlgray);
-    border-right: 1px solid rgb(239, 239, 239);
+    background-color: var(--hideablebgcol);
+    border-right: 1px solid var(--navborder);
 }
 
 .lh {
@@ -249,11 +360,12 @@ button:focus, button:focus, [type="submit"]:focus {
 }
 
 .socials {
-    background-color: var(--lgray);
+    background-color: var(--socbtnbgcol);
     margin: 0 auto;
     width: 4em;
     height: 4em;
     border: none;
+    border: 0.5px solid var(--socborder);
     border-radius: 50%;
     background-repeat: no-repeat;
     margin: 0.4em;
@@ -275,11 +387,12 @@ button:focus, button:focus, [type="submit"]:focus {
 }
 
 .socials svg path {
-    fill: var(--dgray);
+    fill: var(--socbtniccol);
 }
 
 .socials:hover {
-    background-color: var(--lmutedblue);
+    border: 0.5px solid var(--sochoverborder);
+    background-color: var(--socbtnhovercol);
     -webkit-transition: background-color 0.15s ease-in;
     -moz-transition: background-color 0.15s ease-in;
     -o-transition: background-color 0.15s ease-in;
@@ -303,18 +416,44 @@ button:focus, button:focus, [type="submit"]:focus {
 }
 
 .homemiddle {
-    margin-top: 11%;    
+    flex-wrap: wrap;
+    margin-top: var(--homemiddlemargintop);
     padding-left: var(--homepadleft);
     padding-right: var(--homepadright);
 }
 
 .hi {
+    color: var(--dthemefcol);
     font-family: "SFThin";
     font-size: var(--h1);
     margin-bottom: -0.5vh;
 }
 
+.hi:after {
+    content: "";
+    display: inline-block;
+    height: 0.5em;
+    vertical-align: bottom;
+    animation: animline 0.8s;
+    width: 2.2em;
+    margin-right: -100%;
+    margin-left: 6px;
+    border-top: 1px solid var(--linecol);
+}
+
+@keyframes animline {
+    0% {
+        width: 0em;
+    }
+
+    100% {
+        width: 2.2em;
+    }
+
+}
+
 .myname {
+    color: var(--namecol);
     font-family: "SFBold";
     font-size: var(--h2);
     margin-left: 5vh;
@@ -322,24 +461,28 @@ button:focus, button:focus, [type="submit"]:focus {
 }
 
 .title {
-    font-family: "SFLight";
+    color: var(--titlecol);
+    font-family: "SFThin";
     font-size: var(--h3);
     padding-top: 1vh;
 }
 
 .bio {
-    font-family: "SFMedium";
+    color: var(--dthemefcol);
+    flex-wrap: wrap;
+    font-family: "SFRegular";
     font-size: var(--h3);
     padding-top: 1.5vh;
 }
 
-.knowmore {
-    color: var(--blue);
+.resume {
+    color: var(--dblue);
     border-radius: 5px;
-    border: 2px solid var(--blue);
-    background-color: white;
+    border: 2px solid var(--dblue);
+    background-color: var(--bodycol);
     padding: 14px;
-    width: 220px;
+    margin-bottom: 30px;
+    width: 240px;
     font-family: "SFMedium";
     font-size: var(--h3);
     text-align: center;
@@ -347,70 +490,92 @@ button:focus, button:focus, [type="submit"]:focus {
     overflow: hidden;
     transition: all 0.3s;
     margin-top: 4vh;
-    cursor: none;
+    /* cursor: none; */
 }
 
-.knowmore span {
+.resume span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.3s;
-    cursor: none;
+    /* cursor: none; */
 }
 
-.knowmore span:after {
+.resume span:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: large;
+    font-size: 1em;
     content: '\f061';
-    padding: 4px;
     position: absolute;
     opacity: 0;
     right: -20px;
     transition: 0.3s;
+    transform: rotate(-45deg);
 }
 
-.knowmore:hover span {
+.resume:hover span {
     padding-right: 26px;
 }
 
-.knowmore:hover span:after {
+.resume:hover span:after {
     opacity: 1;
     right: 0;
 }
 
 .homerighthalf {
     margin-top: 10%;
-    display:block;
+    display: block;
+    overflow: hidden;
+    height: var(--hrhhgt);
+    padding: 0%;
 }
 
 .scrollcont {
+    padding: 0;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
     position: relative;
+    width: 100vw;
     overflow: hidden;
 }
-  
+
 .scrolling-text {
+    padding: 0;
+    margin: 0;
     display: inline-block;
+    font-family: "SFBlack";
     transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
     will-change: transform;
     backface-visibility: hidden;
 }
-  
+
 .scrolling-text .scrolling-text-content {
-    color: #F6F6F6;
+    padding: 0;
+    margin: 0;
+    color: var(--scrollercol);
+    font-size: var(--stexthgt);
     font-family: "SFBlack";
-    font-weight: bolder;
-    font-size: 6vw;
     white-space: nowrap;
     transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+    line-height: 1em;
 }
-  
-.sidetext{
+
+.sidetext {
+    padding: 0%;
     transform: rotate(var(--scrolldeg));
+    width: 100%;
 }
 
 .self {
-    height: var(--self);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+    height: var(--selfh);
     -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
@@ -418,70 +583,117 @@ button:focus, button:focus, [type="submit"]:focus {
     -ms-user-select: none;
 }
 
-@media (min-width: 992px) {
-    .navbar li {
-        margin: 0.6em;
-    }
-}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 250px) {
     :root {
-        --self: 38vh;
-        --scrolldeg: 0deg;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    :root {
+        --homemiddlemargintop: 16%;
+        --borderthickness: 0px;
+        --selfh: 13em;
+        --contactmb: 10px;
         --navunderlinewidth: 0%;
-        --h1: 1.7em;
-        --h2: 3.5em;
-        --h3: 1.3em;
+        --homepadleft: 1vh;
+        --homepadright: 1vh;
         --scrolldeg: 0deg;
+        --stexthgt: 70px;
+        --hrhhgt: 60%;
+    }
+}
 
+@media only screen and (max-width: 350px) {
+    :root {
+        --homemiddlemargintop: 16%;
+        --borderthickness: 0px;
+        --selfh: 15em;
+        --contactmb: 10px;
+        --navunderlinewidth: 0%;
+        --homepadleft: 1vh;
+        --homepadright: 1vh;
+        --scrolldeg: 0deg;
+        --stexthgt: 70px;
+        --hrhhgt: 60%;
     }
 }
 
 @media only screen and (max-width: 450px) {
     :root {
+        --homemiddlemargintop: 16%;
+        --borderthickness: 0px;
+        --selfh: 17em;
+        --contactmb: 10px;
         --navunderlinewidth: 0%;
-        --self: 34vh;
         --homepadleft: 1vh;
         --homepadright: 1vh;
         --scrolldeg: 0deg;
-
+        --stexthgt: 70px;
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 500px) {
     :root {
+        --homemiddlemargintop: 15%;
+        --borderthickness: 0px;
+        --selfh: 19em;
+        --contactmb: 10px;
+        --navunderlinewidth: 0%;
+        --h1: 1.7em;
+        --h2: 3.5em;
+        --h3: 1.3em;
+        --scrolldeg: 0deg;
+        --stexthgt: 80px;
+        --hrhhgt: 60%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    :root {
+        --homemiddlemargintop: 15%;
+        --borderthickness: 0px;
+        --selfh: 21em;
+        --contactmb: 10px;
+        --scrolldeg: 0deg;
+        --stexthgt: 90px;
         --navunderlinewidth: 0%;
         --homepadleft: 2vh;
         --homepadright: 2vh;
-        
+        --hrhhgt: 60%;
     }
 }
 
 @media only screen and (max-width: 800px) {
     :root {
+        --homemiddlemargintop: 14%;
+        --borderthickness: 0px;
+        --selfh: 23em;
+        --contactmb: 10px;
         --navunderlinewidth: 0%;
         --homepadleft: 3vh;
         --homepadright: 3vh;
         --scrolldeg: 0deg;
+        --stexthgt: 100px;
+        --hrhhgt: 60%;
     }
 }
 
 @media only screen and (max-width: 960px) {
     :root {
+        --borderthickness: 0px;
         --homepadleft: 4vh;
         --homepadright: 4vh;
         --scrolldeg: 0deg;
+        --stexthgt: 110px;
     }
 }
-
 
 @media only screen and (max-width: 1000px) {
     :root {
         --scrolldeg: 0deg;
+        --stexthgt: 120px;
+        --hrhhgt: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar li {
+        margin: 0.6em;
     }
 }

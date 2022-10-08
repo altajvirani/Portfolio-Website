@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Altaj Virani</title>
     <meta charset="utf-8">
@@ -26,84 +27,107 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="js/disablerc.js"></script>
+    <!-- <script src="js/disablerc.js"></script> -->
 </head>
 
 <body oncontextmenu="return false">
-    <div class="cursor1"></div>
+    <!-- <div class="cursor1"></div>
     <div class="cursor2"></div>
-    <script src="js/cursor.js"></script>
-    <script src="js/scroller.js"></script>
-    <nav class="navbar navbar-expand-md">
-        <div class="col-lg-1 d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block mtnavdiv"></div>
-        <div class="col-lg-11 navdiv">
-            <button class="navbar-toggler ml-auto bg-danger" type="button" data-toggle="collapse" data-target="#collapsableNav"
-                aria-controls="collapsableNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="collapsableNav">
-                <ul class="navbar-nav ml-auto mr-auto">
-                    <li class="nav-item ml-auto active">
-                        <a class="nav-link home" href="">
-                            <span class="navoptions" aria-hidden="true">Home</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link about" href="">
-                            <span class="navoptions" aria-hidden="true">About Me</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link skills" href="">
-                            <span class="navoptions" aria-hidden="true">Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link projects" href="">
-                            <span class="navoptions" aria-hidden="true">Projects</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link education" href="">
-                            <span class="navoptions" aria-hidden="true">Education</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link experience" href="">
-                            <span class="navoptions" aria-hidden="true">Experience</span>
-                        </a>
-                    </li>
-                </ul>
-                <button class="navbar navbar-btn contact">Contact Me</button>
+    <script src="js/cursor.js"></script> -->
+    <header class="nav-header">
+        <nav class="navbar navbar-expand-md">
+            <div class="col-lg-1 d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block emptynavdiv">
+                <a href="#top">
+                    <img class="logo1" src="assets/logo.png">
+                </a>
             </div>
-        </div>
-    </nav>
-    <section class="homepage" id="top">
+            <div class="col-lg-11 navdiv">
+                <div class="col-lg-1 d-block d-xs-block d-sm-block d-md-none d-lg-none d-xl-none">
+                    <a href="#top">
+                        <img class="logo2 mt-auto mb-auto mr-auto" src="assets/logo.png">
+                    </a>
+                </div>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                    data-target="#collapsableNav" aria-controls="collapsableNav" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="collapsableNav">
+                    <ul class="navbar-nav ml-auto mr-auto">
+                        <li class="nav-item ml-auto active">
+                            <a class="nav-link home" href="">
+                                <span class="navoptions" aria-hidden="true">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link about" href="#aboutme">
+                                <span class="navoptions" aria-hidden="true">About Me</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link skills" href="skills">
+                                <span class="navoptions" aria-hidden="true">Skills</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link projects" href="projects">
+                                <span class="navoptions" aria-hidden="true">Projects</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link education" href="education">
+                                <span class="navoptions" aria-hidden="true">Education</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link experience" href="">
+                                <span class="navoptions" aria-hidden="true">Experience</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="navbar navbar-btn contact">Contact Me</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="homepage" name="top">
         <div class="container-fluid home">
             <div class="row">
                 <div class="col-lg-1 d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block hidsoc">
                     <div class="lh">
-                        <button class="socials" type="button" onclick="window.open('https\://www.linkedin.com/in/altaj-virani-680221154/');c">
+                        <button class="socials" type="button"
+                            onclick="window.open('https\://www.linkedin.com/in/altaj-virani-680221154/');">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                                <path fill="currentColor" id="linkedin" data-name="Path 20"
+                                <path fill="currentColor" id="linkedin" data-name="path 1"
                                     d="M31.694,2H4.426A2.327,2.327,0,0,0,2.06,4.288V31.712A2.327,2.327,0,0,0,4.426,34H31.694a2.327,2.327,0,0,0,2.366-2.288V4.288A2.327,2.327,0,0,0,31.694,2ZM11.766,28.784H6.937v-14.4h4.829ZM9.352,12.368h0a2.5,2.5,0,1,1,0-4.992,2.532,2.532,0,0,1,2.424,1.159,2.5,2.5,0,0,1,0,2.674A2.532,2.532,0,0,1,9.352,12.368ZM29.183,28.784H24.354V21.056c0-1.936-.692-3.2-2.447-3.2A2.655,2.655,0,0,0,19.428,19.6a3.182,3.182,0,0,0-.161,1.168v8H14.438v-14.4h4.829V16.4A4.835,4.835,0,0,1,23.629,14c3.219,0,5.553,2.064,5.553,6.5Z"
                                     transform="translate(-2.06 -2)" />
                             </svg>
                         </button><br>
-                        <button class="socials" type="button" onclick="window.open('https\://github.com/altajvirani');c">
+                        <button class="socials" type="button" onclick="window.open('https\://github.com/altajvirani');">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                                <path fill="currentColor" id="github" data-name="Path 21"
+                                <path fill="currentColor" id="github" data-name="path 1"
                                     d="M18,2.247A16.124,16.124,0,0,0,2.207,16.024,16.446,16.446,0,0,0,12.94,34.215c.8.144,1.1-.349,1.1-.779,0-.39-.02-1.681-.02-3.055-4.02.759-5.06-1-5.379-1.928A5.961,5.961,0,0,0,7,26.136c-.56-.308-1.36-1.066-.02-1.087a3.2,3.2,0,0,1,2.46,1.681A3.436,3.436,0,0,0,11.5,28.4a3.345,3.345,0,0,0,2.6-.315,3.487,3.487,0,0,1,1.02-2.194c-3.56-.41-7.279-1.825-7.279-8.1a6.477,6.477,0,0,1,1.64-4.409,6.034,6.034,0,0,1,.16-4.347s1.34-.431,4.4,1.681a14.722,14.722,0,0,1,8,0c3.06-2.133,4.4-1.681,4.4-1.681a6.033,6.033,0,0,1,.16,4.347,6.439,6.439,0,0,1,1.64,4.409c0,6.3-3.74,7.69-7.3,8.1a3.942,3.942,0,0,1,1.08,3.035c0,2.194-.02,3.958-.02,4.511,0,.431.3.943,1.1.779a16.456,16.456,0,0,0,10.689-18.2A16.132,16.132,0,0,0,18,2.247Z"
                                     transform="translate(-1.999 -2.247)" />
                             </svg>
                         </button><br>
-                        <button class="socials" type="button" onclick="window.open('https\://shorturl.at/cjkry');c">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
-                                <path fill="currentColor" id="dribbble"
-                                    d="M19.5,2.5a17.038,17.038,0,0,0-17,17.044c.93,22.612,33.073,22.605,34,0A17.038,17.038,0,0,0,19.5,2.5Zm11.243,7.863a14.489,14.489,0,0,1,3.272,9.075,33.742,33.742,0,0,0-10.109-.47C23.517,18,23.1,17.036,22.635,16.1A19.377,19.377,0,0,0,30.743,10.363ZM19.5,5a14.4,14.4,0,0,1,9.626,3.674c-.257.371-2.44,3.318-7.608,5.257A78.327,78.327,0,0,0,16.1,5.409,15.181,15.181,0,0,1,19.5,5ZM13.327,6.386a92.192,92.192,0,0,1,5.387,8.423A54.375,54.375,0,0,1,5.288,16.582,14.621,14.621,0,0,1,13.327,6.386ZM4.978,19.574c0-.151,0-.3.008-.447a53.793,53.793,0,0,0,14.922-2.075c.416.811.816,1.644,1.179,2.469-.2.053-.385.113-.574.174C13.024,22.12,9.042,28.732,8.71,29.3A14.5,14.5,0,0,1,4.978,19.574ZM19.508,34.126a14.446,14.446,0,0,1-8.916-3.075c.257-.53,3.2-6.227,11.394-9.09a.6.6,0,0,0,.091-.03,60.736,60.736,0,0,1,3.1,11.037A14.272,14.272,0,0,1,19.508,34.126Zm8.115-2.492A64.715,64.715,0,0,0,24.8,21.256a21.289,21.289,0,0,1,9.044.621A14.623,14.623,0,0,1,27.622,31.634Z"
-                                    transform="translate(-2.5 -2.5)" />
+                        <button class="socials" type="button" onclick="window.open('https\:leetcode.com/altajvirani');">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30.899" height="36.926"
+                                viewBox="0 0 30.899 36.926">
+                                <g id="leetcode" transform="translate(-1.917 -0.001)">
+                                    <path fill="currentColor" id="path_3" data-name="path 3"
+                                        d="M28.778,15.08a2.009,2.009,0,0,0-1.939-2.071H11.355a2.075,2.075,0,0,0,0,4.142H26.839A2.007,2.007,0,0,0,28.778,15.08Z"
+                                        transform="translate(4.039 7.006)" fill="#707070" />
+                                    <path fill="currentColor" id="path_2" data-name="path 2"
+                                        d="M4.28,27.982l6.636,6.71a8.058,8.058,0,0,0,5.851,2.234,8.1,8.1,0,0,0,5.854-2.3L26.6,30.57a2.08,2.08,0,0,0-.06-2.923,2.039,2.039,0,0,0-2.9-.06L19.528,31.6a3.789,3.789,0,0,1-2.783,1.019A3.8,3.8,0,0,1,13.96,31.6L7.347,24.885a4.05,4.05,0,0,1-1.071-2.866,3.905,3.905,0,0,1,1.071-2.806l6.593-6.739a3.823,3.823,0,0,1,2.8-.992A3.794,3.794,0,0,1,19.526,12.5l4.117,4.01a2.04,2.04,0,0,0,2.9-.058,2.082,2.082,0,0,0,.06-2.925L22.622,9.469a7.684,7.684,0,0,0-3.68-2.046l-.052-.011,3.765-3.851A2.079,2.079,0,0,0,22.6.636a2.045,2.045,0,0,0-2.9-.058L4.28,16.118A8.239,8.239,0,0,0,2,22.018a8.385,8.385,0,0,0,2.28,5.964Z"
+                                        transform="translate(0.044 0)" fill="#707070" />
+                                    <path fill="currentColor" id="path_1" data-name="path 1"
+                                        d="M11.453,35.1a3.245,3.245,0,0,1-.729-.555C8.682,32.5,6.631,30.453,4.594,28.4A8.9,8.9,0,0,1,3.385,17.134a9.232,9.232,0,0,1,1.291-1.545L19.482.752a2.183,2.183,0,0,1,3.2-.1,2.22,2.22,0,0,1-.12,3.179Q20.786,5.619,19.008,7.4a1.229,1.229,0,0,1-.346.442c-1.328,1.348-2.693,2.66-4,4.028-.171.178-.4.286-.572.469C11.9,14.533,9.682,16.7,7.524,18.917a4.463,4.463,0,0,0,.1,6.35c2.013,2.056,4.06,4.077,6.094,6.114.1.1.209.2.314.3a2.11,2.11,0,0,1,.282,2.571,2.282,2.282,0,0,1-2.051,1.12A1.747,1.747,0,0,1,11.453,35.1Z"
+                                        transform="translate(0 0)" fill="#707070" />
+                                </g>
                             </svg>
                         </button><br>
-                        <button class="socials mail" type="button" onclick="window.open('mailto: altajatwork@gmail.com');c">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="34.004" height="27.203" viewBox="0 0 34.004 27.203">
+                        <button class="socials mail" type="button"
+                            onclick="window.open('mailto: altajatwork@gmail.com');">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="34.004" height="27.203"
+                                viewBox="0 0 34.004 27.203">
                                 <path fill="currentColor" id="mail" data-name="Path 23"
                                     d="M32.6,4H5.4A3.41,3.41,0,0,0,2,7.4V27.8a3.41,3.41,0,0,0,3.4,3.4H32.6A3.41,3.41,0,0,0,36,27.8V7.4A3.41,3.41,0,0,0,32.6,4Zm-.68,7.226L20.8,18.18a3.368,3.368,0,0,1-3.6,0L6.081,11.226a1.444,1.444,0,1,1,1.53-2.448L19,15.9,30.394,8.778a1.444,1.444,0,1,1,1.53,2.448Z"
                                     transform="translate(-2 -4)" />
@@ -114,43 +138,60 @@
                 <div class="col-lg-6 homemiddle">
                     <h1 class="hi">Hi, I'm</span></h1>
                     <span class="myname">Altaj Virani.</span>
-                    <h1 class="title">Full Stack Web Dev | Android Dev</h1>
+                    <h1 class="title">MERN Stack Web Dev | Android Dev</h1>
+                    <!-- <div class="text-box">
+                        <div class="title">
+                            <div>
+                                <span>MERN Stack Developer</span>
+                                <span>Android Developer</span>
+                                <span>Competitive Programmer</span>
+                                <span>UI/UX Designer</span>
+                            </div>	
+                        </div>
+                    </div> -->
                     <h1 class="bio">Software Engineer based in Mumbai, with a passion for user-centric design, a problem
                         solving approach and a strong growth mindset.</h1>
-                    <button class="knowmore" type="button">
-                        <span>Know more</span>
+                    <button class="resume" type="button" onclick="window.open('assets/Altaj Virani\'s Resume.pdf');">
+                        <span>View Resume</span>
                     </button>
                 </div>
                 <div class="col-lg-5 mt-auto mb-auto homerighthalf">
-                <!-- <div class="col-lg-5 mt-auto mb-auto sidetext"> -->
-                    <!-- <div class="container-fluid bg-danger sidetext">   
-                        <div class="container left-to-right scrollcont" speed=60>
+                    <img src='assets\self.svg' class="mx-auto d-block self" />
+                    <div class="sidetext">
+                        <div class="container left-to-right scrollcont" speed=40>
                             <div class='scrolling-text'>
-                                <h2 class="scrolling-text-content">ALTAJ VIRANI ALTAJ</h2>
+                                <span class="scrolling-text-content">ALTAJ VIRANI</span>
                             </div>
                         </div>
-                        <div class="container scrollcont" speed=60>
+                        <div class="container scrollcont" speed=40>
                             <div class='scrolling-text'>
-                                <h2 class="scrolling-text-content">VIRANI ALTAJ VIRANI</h2>
+                                <span class="scrolling-text-content">ALTAJ VIRANI</span>
                             </div>
                         </div>
-                        <div class="container left-to-right scrollcont" speed=60>
+                        <div class="container left-to-right scrollcont" speed=40>
                             <div class='scrolling-text'>
-                                <h2 class="scrolling-text-content">ALTAJ VIRANI ALTAJ</h2>
+                                <span class="scrolling-text-content">ALTAJ VIRANI</span>
                             </div>
                         </div>
-                        <div class="container scrollcont" speed=60>
+                        <div class="container scrollcont" speed=40>
                             <div class='scrolling-text'>
-                                <h2 class="scrolling-text-content">VIRANI ALTAJ VIRANI</h2>
+                                <span class="scrolling-text-content">ALTAJ VIRANI</span>
                             </div>
                         </div>
-                    </div> -->
-                    <img src='assets\self.png' class="mx-auto d-block self" />
+                        <div class="container left-to-right scrollcont" speed=40>
+                            <div class='scrolling-text'>
+                                <span class="scrolling-text-content">ALTAJ VIRANI</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <script src="js/nameanim.js"></script>
     </section>
+    <div id="toggle" class="mt-auto mr-auto"><i class="indicator"></i></div>
+    <script src="js/nameanim.js"></script>
+    <script src="js/scroller.js"></script>
+    <script src="js/modetoggler.js"></script>
 </body>
 
 </html>
